@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>BackOffice</h2>
+    <ul>
+        <li><a class="active">Dashboard</a></li>
+        <li><a id="logoutBtn">Cerrar sesión</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <header>
+        <h1>Mis Proyectos</h1>
+        <p>Gestión completa CRUD</p>
+    </header>
+
+    <section id="projectsContainer" class="projects-grid"></section>
+
+    <button class="add-btn" id="openFormBtn">＋ Agregar proyecto</button>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Nuevo Proyecto</h2>
+            <form id="projectForm">
+                <input type="text" id="title" placeholder="Título" required>
+                <textarea id="description" placeholder="Descripción" required></textarea>
+                <input type="text" id="technologies" placeholder="Tecnologías (coma separadas)">
+                <input type="url" id="repository" placeholder="URL del repositorio">
+                <input type="url" id="imageUrl" placeholder="URL de imagen (opcional)">
+                <button type="submit">Crear</button>
+                <button type="button" class="cancel" id="closeModalBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="detailsModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="detailsTitle"></h2>
+            <img id="detailsImg" style="width:100%; border-radius:6px; margin:10px 0; display:none;">
+            <p id="detailsDesc"></p>
+            <p><strong>Tecnologías:</strong> <span id="detailsTech"></span></p>
+            <a id="detailsRepo" href="#" target="_blank">Ver repositorio</a>
+            <br><br>
+            <button class="cancel" id="closeDetailsBtn">Cerrar</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
